@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message MsgStart {
+	optional string protoName=1[default="MsgStart"];
+  optional bool res = 2;
+  repeated uint32 guid = 3;
+}

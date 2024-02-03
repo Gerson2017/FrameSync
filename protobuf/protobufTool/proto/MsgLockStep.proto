@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+
+
+message MsgLockStep {
+  message Opts {
+    optional uint32 guid = 1;
+    repeated Operation operation = 2;
+    repeated Fixed64 param = 3;
+  }
+  
+  optional int32 turn = 1;
+  repeated Opts opts = 2;
+}
+
+message MsgLockStepBack {
+  message UnsyncOpts {
+    optional int32 turn = 1;
+    repeated Opts opts = 2;
+  }
+  
+  optional int32 turn = 1;
+  repeated UnsyncOpts unsync_opts = 2;
+}
+
+message Fixed64 {
+  optional int64 value = 1;
+}
+
+enum Operation {
+  JOYSTICK = 0;
+}

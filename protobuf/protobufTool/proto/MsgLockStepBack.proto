@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+message MsgLockStepBack {
+
+  message Opts {
+    optional uint32 guid = 1;
+    repeated Operation operation = 2;
+    repeated Fixed64 param = 3;
+  }
+
+  message UnsyncOpts {
+    optional int32 turn = 1;
+    repeated Opts opts = 2;
+  }
+  
+  optional int32 turn = 1;
+  repeated UnsyncOpts unsync_opts = 2;
+}

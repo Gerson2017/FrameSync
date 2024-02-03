@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+
+
+message MsgGetInfo {
+	optional string protoName=1[default="MsgGetInfo"];
+   optional uint32 guid = 2;
+}
